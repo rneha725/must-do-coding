@@ -65,7 +65,7 @@ void heapSort(vector<int>&heap, int size) {
 // this algorithm swaps the root with the last element, so at last you have the maximum, but, there is one element misplaced,
 // on root, so it is heapified from 0 index.
 // Time: Log n
-int getMax(vector<int> &heap) {
+int extractMax(vector<int> &heap) {
 	int result = heap[0];
 	
 	swap(heap, 0, heap.size()-1);
@@ -73,6 +73,8 @@ int getMax(vector<int> &heap) {
 	heapify(heap, 0, heap.size());
 	return result;
 }
+
+int getMax(vector<int> heap) {return heap[0];}
 
 // if you add some element at the end of the heap array, at this point every other part of the heap is following the property but last element 
 // might not, so heapify up from the last elememt
@@ -104,7 +106,8 @@ int main() {
 	// 3. This method takes the heap elements dynamically, and uses bottom up approach to insert and heapify_up
 	vector<int> ar1;
 	insert(ar1,8);insert(ar1,7);insert(ar1,9);insert(ar1,1);insert(ar1,4);insert(ar1,3);
-	cout<<getMax(ar1);cout<<getMax(ar1);cout<<getMax(ar1);cout<<getMax(ar1);
+	cout<<extractMax(ar1);cout<<extractMax(ar1);
+	cout<<getMax(heap);
 	
 	// 4. heapsort takes the root to the last element and the resulting heap's size is decreased to call heapify again on the
 	// remaining heap from the array, it is only applied on the new root element, because that's only one displaced
