@@ -1,6 +1,6 @@
 //working code
 
-//heap is a complete binary tree, which can be stored in an array. Heaps are used mainly for priority queue, so some must to
+//heap is a complete binary tree, which can be stored in an array. Heaps are used mainly for priority queue, so some must do
 //implementations are getting the max/min from the heap, inserting.
 
 //Remember that complete binary tree is a balanced tree, so height is always log n
